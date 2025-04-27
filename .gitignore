@@ -1,0 +1,12 @@
+# Node-pakker
+node_modules/
+
+# Produktions-build
+dist/
+
+# Miljøvariabler
+.env
+
+# macOS & Windows temp-filer
+.DS_Store
+Thumbs.db

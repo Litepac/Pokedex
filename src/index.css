@@ -1,0 +1,331 @@
+
+/* Baggrund */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: url('./assets/pikachu.jpg') center/cover fixed no-repeat;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: none;
+}
+
+.logo-left {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 80px;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 200;
+}
+
+/* Navigation */
+
+nav {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+.nav-link {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+.nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* søgefunktion */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.controls input,
+.controls select {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Grid og pokemon cards */
+
+.pokemon-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: inherit;
+  background-clip: padding-box;
+}
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+/* Header */
+.pokemon-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.pokemon-id,
+.pokemon-name {
+  font-weight: bold;
+}
+
+/* Sprite */
+.pokemon-sprite {
+  align-self: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+/* Ikoner */
+.type-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+.type-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  text-decoration: none;
+}
+
+/* Diverse knapper */
+
+.button {
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0.25rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #008cba;
+  color: white;
+  cursor: pointer;
+}
+.button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Alle typer pokemon med farver */
+
+.pokemon-card.type-fire,    .type-fire    { background-color: #F08030; color: white; }
+.pokemon-card.type-water,   .type-water   { background-color: #4F78C9; color: white; }
+.pokemon-card.type-grass,   .type-grass   { background-color: #78C850; color: white; }
+.pokemon-card.type-electric,.type-electric{ background-color: #F8D030; color: black; }
+.pokemon-card.type-ground,  .type-ground  { background-color: #E0C068; color: black; }
+.pokemon-card.type-rock,    .type-rock    { background-color: #B8A038; color: black; }
+.pokemon-card.type-fairy,   .type-fairy   { background-color: #EE99AC; color: black; }
+.pokemon-card.type-poison,  .type-poison  { background-color: #A040A0; color: white; }
+.pokemon-card.type-bug,     .type-bug     { background-color: #A8B820; color: black; }
+.pokemon-card.type-normal,  .type-normal  { background-color: #A8A878; color: black; }
+.pokemon-card.type-fighting,.type-fighting{ background-color: #C03028; color: white; }
+.pokemon-card.type-psychic, .type-psychic { background-color: #F85888; color: white; }
+.pokemon-card.type-ghost,   .type-ghost   { background-color: #705898; color: white; }
+.pokemon-card.type-ice,     .type-ice     { background-color: #98D8D8; color: black; }
+.pokemon-card.type-dragon,  .type-dragon  { background-color: #7038F8; color: white; }
+.pokemon-card.type-dark,    .type-dark    { background-color: #705848; color: white; }
+.pokemon-card.type-steel,   .type-steel   { background-color: #B8B8D0; color: black; }
+.pokemon-card.type-flying,  .type-flying  { background-color: #A890F0; color: white; }
+
+
+.center {
+  text-align: center;
+}
+.error {
+  color: red;
+  text-align: center;
+}
+
+/* Pokemonkort styling */
+
+.detail-card {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 600px;
+  border-radius: 12px;
+  color: white;
+  background-clip: padding-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header med stor titel og billedet */
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.detail-header h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.detail-sprite {
+  width: 120px;
+  height: auto;
+}
+
+/* Info sektion - stort billede */
+.detail-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.detail-info div {
+  font-size: 1rem;
+}
+
+/* Ikoner */
+.detail-types {
+  grid-column: span 2;
+}
+
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255,255,255,0.2);
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+.type-icon {
+  font-size: 1.2rem;
+}
+
+/* Tilbage knap */
+.back-button {
+  align-self: start;
+  background-color: rgba(255,255,255,0.3);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .detail-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About - hurtig fiks */
+
+.about-card {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-card h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.about-card p {
+  margin-bottom: 1rem;
+}
+
+.signature {
+  text-align: right;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+
+/* Stats og abilities når man klikker ind */
+
+.detail-stats,
+.detail-abilities {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.detail-stats h2,
+.detail-abilities h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 0.25rem;
+}
+
+.detail-stats > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+.detail-abilities ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+.detail-abilities li {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .detail-stats > div,
+  .detail-abilities ul {
+    grid-template-columns: 1fr;
+  }
+}
