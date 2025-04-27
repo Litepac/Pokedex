@@ -4,8 +4,8 @@ LINK TIL SIDEN: https://litepac.github.io/Pokedex/
 
 Denne applikation er en simpel Pokédex lavet med React, Vite og React Router. Den henter data fra PokéAPI og viser:
 
-- En pagineret oversigt over Pokémon  
-- Detaljer om hver Pokémon (ID, billede, højde, vægt, typer, stats og evner)  
+- En oversigt over Pokémon  
+- Detaljer om hver Pokémon
 - En “About”-side med beskrivelse af projektet  
 
 ---
