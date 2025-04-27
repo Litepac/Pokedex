@@ -1,3 +1,5 @@
+LINK TIL SIDEN: https://litepac.github.io/Pokedex/
+
 # Pokédex React App
 
 Denne applikation er en simpel Pokédex lavet med React, Vite og React Router. Den henter data fra PokéAPI og viser:
