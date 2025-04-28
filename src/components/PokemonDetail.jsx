@@ -83,8 +83,6 @@ export default function PokemonDetail() {
         </div>
       </section>
 
-      // Detaljer her nede
-
       <section className="detail-stats">
         <h2>Base Stats</h2>
         {pokemon.stats.map(s => (
